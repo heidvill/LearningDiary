@@ -29,5 +29,21 @@ namespace Oppimispaivakirja
 
             return q;
         }
+
+        public List<Topic> GetTopicsWithSearchWord(string input)
+        {
+            var q = from t in db.Topic
+                    where t.Title.Contains(input) || t.Description.Contains(input)
+                    select t;
+            return q.ToList();
+        }
+
+        public void AddTopic(Topic t)
+        {
+            db.Topic.Add(t);
+            db.SaveChanges();
+        }
+
+        
     }
 }

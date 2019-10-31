@@ -8,7 +8,7 @@ namespace Oppimispaivakirja
     {
         private readonly int id;
         private static int nextFreeId;
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public double? EstimatedTimeToMaster { get; set; }
@@ -20,7 +20,7 @@ namespace Oppimispaivakirja
 
         public Topic()
         {
-            Id = nextFreeId++;
+            //Id = nextFreeId++;
         }
 
         public Topic(string title) : base()

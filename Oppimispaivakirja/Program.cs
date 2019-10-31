@@ -11,15 +11,21 @@ namespace Oppimispaivakirja
 
         static void Main(string[] args)
         {
-            TopicDBHandler t = new TopicDBHandler();
-            var topics = t.GetAllTopics();
+            UI ui = new UI();
+            ui.Start();
+            //TopicDBHandler dBHandler = new TopicDBHandler();
+            //var topics = dBHandler.GetAllTopics();
 
-            foreach (var item in t.GetAllTopics())
-            {
-                Console.WriteLine(item);
-            }
+            //Topic t = new Topic("ADO .NET");
+            //dBHandler.AddTopic(t);
 
-            Console.WriteLine(t.GetTopicWithId(1));
+            //foreach (var item in dBHandler.GetAllTopics())
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Console.WriteLine(dBHandler.GetTopicWithId(1));
+
             //string path = ".";
             //string fileName = "Topicfile.txt";
             //DirectoryInfo d = new DirectoryInfo(path);

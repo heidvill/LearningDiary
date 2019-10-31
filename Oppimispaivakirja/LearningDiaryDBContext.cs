@@ -33,8 +33,7 @@ namespace Oppimispaivakirja
             modelBuilder.Entity<Topic>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .HasColumnName("Id")
-                    .ValueGeneratedNever();
+                    .HasColumnName("Id");
 
                 entity.Property(e => e.Title)
                     .HasColumnName("Title")
