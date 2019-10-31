@@ -4,19 +4,19 @@ using System.Text;
 
 namespace Oppimispaivakirja
 {
-    class Topic
+    public partial class Topic
     {
         private readonly int id;
         private static int nextFreeId;
         public int Id { get; private set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public double EstimatedTimeToMaster { get; set; }
-        public double TimeSpent { get; set; } = 0;
+        public double? EstimatedTimeToMaster { get; set; }
+        public double? TimeSpent { get; set; } = 0;
         public string Source { get; set; }
-        public DateTime StartLearningDate { get; set; }
-        public bool InProgress { get; set; } = false;
-        public DateTime CompletionDate { get; set; }
+        public DateTime? StartLearningDate { get; set; }
+        public bool? InProgress { get; set; } = false;
+        public DateTime? CompletionDate { get; set; }
 
         public Topic()
         {

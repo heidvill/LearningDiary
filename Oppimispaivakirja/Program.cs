@@ -11,19 +11,28 @@ namespace Oppimispaivakirja
 
         static void Main(string[] args)
         {
-            string path = ".";
-            string fileName = "Topicfile.txt";
-            DirectoryInfo d = new DirectoryInfo(path);
-            filePath = d.FullName + "\\" + fileName;
+            TopicDBHandler t = new TopicDBHandler();
+            var topics = t.GetAllTopics();
 
-            if (!File.Exists(filePath))
+            foreach (var item in t.GetAllTopics())
             {
-                File.Create(filePath).Dispose();
+                Console.WriteLine(item);
             }
 
-            TopicHandler topicHandler = new TopicHandler();
-            ReadCSV(topicHandler);
-            Start(topicHandler);
+            Console.WriteLine(t.GetTopicWithId(1));
+            //string path = ".";
+            //string fileName = "Topicfile.txt";
+            //DirectoryInfo d = new DirectoryInfo(path);
+            //filePath = d.FullName + "\\" + fileName;
+
+            //if (!File.Exists(filePath))
+            //{
+            //    File.Create(filePath).Dispose();
+            //}
+
+            //TopicHandler topicHandler = new TopicHandler();
+            //ReadCSV(topicHandler);
+            //Start(topicHandler);
         }
 
         private static void ReadCSV(TopicHandler topicHandler)
