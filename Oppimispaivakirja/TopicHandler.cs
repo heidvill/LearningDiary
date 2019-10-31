@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Collections;
+using System.Data.SqlClient;
 
 namespace Oppimispaivakirja
 {
@@ -86,7 +87,7 @@ namespace Oppimispaivakirja
         public Topic RemoveTopic(string input)
         {
             List<Topic> found = FindTopic(input);
-            Topic t;
+            Topic t = null;
             if (found.Count > 1)
             {
                 Console.WriteLine("Löytyi useita.");
